@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tselot Beyene — Java Developer</title>
+  <meta name="description" content="Tselot Beyene — Java Developer (Spring Boot, Microservices, DevOps). Portfolio, experience, projects, and contact." />
+  <meta property="og:title" content="Tselot Beyene — Java Developer" />
+  <meta property="og:description" content="Java • Spring Boot • Microservices • DevOps • PostgreSQL" />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind config (CDN) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['ui-sans-serif','system-ui','-apple-system','Segoe UI','Roboto','Helvetica','Arial','Apple Color Emoji','Segoe UI Emoji'],
+            mono: ['ui-monospace','SFMono-Regular','Menlo','Monaco','Consolas','Liberation Mono','Courier New','monospace']
+          },
+          keyframes: {
+            floaty: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+            shimmer: { '0%': { backgroundPosition: '0% 50%' }, '100%': { backgroundPosition: '100% 50%' } },
+            fadeUp: { '0%': { opacity: 0, transform: 'translateY(14px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+          },
+          animation: {
+            floaty: 'floaty 6s ease-in-out infinite',
+            shimmer: 'shimmer 7s ease-in-out infinite',
+            fadeUp: 'fadeUp .7s ease-out both'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- shadcn-like tokens (CSS variables) + small extras -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body class="min-h-screen bg-[hsl(var(--background))] text-[hsl(var(--foreground))] antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:z-[60] focus:left-4 focus:top-4 focus:rounded-xl focus:border focus:border-[hsl(var(--border))] focus:bg-[hsl(var(--card))] focus:px-4 focus:py-2">
+    Skip to content
+  </a>
+
+  <!-- Top nav -->
+  <header class="sticky top-0 z-50 border-b border-[hsl(var(--border))] bg-[hsl(var(--background)/.72)] backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <a href="#" class="group inline-flex items-center gap-3">
+        <div class="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--ring))] text-sm font-extrabold text-[hsl(var(--primary-foreground))] shadow">
+          TB
+        </div>
+        <div class="leading-tight">
+          <div class="text-sm font-semibold tracking-tight">Tselot Beyene</div>
+          <div class="text-xs text-[hsl(var(--muted-foreground))]">Java Developer • Backend • DevOps</div>
+        </div>
+      </a>
+
+      <nav class="hidden items-center gap-1 md:flex">
+        <a class="navlink" href="#about">About</a>
+        <a class="navlink" href="#skills">Skills</a>
+        <a class="navlink" href="#experience">Experience</a>
+        <a class="navlink" href="#projects">Projects</a>
+        <a class="navlink" href="#education">Education</a>
+        <a class="navlink" href="#contact">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button id="themeToggle" class="btn btn-ghost" type="button" aria-label="Toggle theme">
+          <span class="inline-flex items-center gap-2">
+            <span class="i-dot"></span>
+            Theme
+          </span>
+        </button>
+        <a class="btn btn-primary hidden sm:inline-flex" href="#contact">Hire me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Decorative background -->
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
+    <div class="absolute left-[-220px] top-[-220px] h-[520px] w-[520px] rounded-full bg-[hsl(var(--primary)/.22)] blur-3xl animate-floaty"></div>
+    <div class="absolute right-[-240px] top-[80px] h-[520px] w-[520px] rounded-full bg-[hsl(var(--ring)/.18)] blur-3xl animate-floaty" style="animation-delay: -2s"></div>
+    <div class="absolute left-[20%] bottom-[-260px] h-[620px] w-[620px] rounded-full bg-[hsl(var(--accent)/.16)] blur-3xl animate-floaty" style="animation-delay: -4s"></div>
+    <div class="noise"></div>
+  </div>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="mx-auto max-w-6xl px-4 pb-10 pt-12 md:pt-16">
+      <div class="grid items-start gap-10 md:grid-cols-[1.25fr_.75fr]">
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--border))] bg-[hsl(var(--card)/.6)] px-3 py-1 text-xs text-[hsl(var(--muted-foreground))] shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-[hsl(var(--primary))] shadow-[0_0_0_3px_hsl(var(--primary)/.18)]"></span>
+            Available for backend / Java roles
+          </div>
+
+          <h1 class="text-balance text-4xl font-black tracking-tight sm:text-5xl md:text-6xl">
+            Building reliable backend systems with
+            <span class="bg-gradient-to-r from-[hsl(var(--primary))] via-[hsl(var(--ring))] to-[hsl(var(--accent))] bg-[length:200%_200%] bg-clip-text text-transparent animate-shimmer">
+              Java & Spring Boot
+            </span>.
+          </h1>
+
+          <p class="max-w-2xl text-pretty text-[hsl(var(--muted-foreground))] md:text-lg">
+            I design and ship scalable microservices, secure REST APIs, and production-ready deployments with Docker/Kubernetes—optimized for performance and observability.
+          </p>
+
+          <div class="flex flex-wrap gap-3">
+            <a class="btn btn-primary" href="#projects">See projects</a>
+            <a class="btn btn-ghost" href="#experience">View experience</a>
+            <a class="btn btn-ghost" href="assets/Tselot_Beyene_Resume.pdf" target="_blank" rel="noreferrer">Download CV</a>
+          </div>
+
+          <div class="flex flex-wrap gap-3 text-sm text-[hsl(var(--muted-foreground))]">
+            <a class="chip" href="https://github.com/TselotBeyene" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="chip" href="https://www.linkedin.com/in/tselot-beyene" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="chip" href="#contact">Contact</a>
+          </div>
+
+          <div class="mt-5 grid gap-3 sm:grid-cols-3">
+            <div class="stat">
+              <div class="stat-k">Backend</div>
+              <div class="stat-v">Spring Boot</div>
+            </div>
+            <div class="stat">
+              <div class="stat-k">Security</div>
+              <div class="stat-v">Keycloak</div>
+            </div>
+            <div class="stat">
+              <div class="stat-k">DevOps</div>
+              <div class="stat-v">Docker/K8s</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right hero card -->
+        <aside class="card p-5">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <div class="text-xs font-semibold text-[hsl(var(--muted-foreground))]">Quick snapshot</div>
+              <h2 class="mt-1 text-lg font-bold">Highlights</h2>
+            </div>
+            <div class="rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--muted)/.25)] px-2.5 py-1 text-xs text-[hsl(var(--muted-foreground))]">
+              Ethiopia • Remote
+            </div>
+          </div>
+
+          <ul class="mt-4 space-y-3 text-sm text-[hsl(var(--muted-foreground))]">
+            <li class="flex gap-2"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-[hsl(var(--primary))]"></span> Java, Spring Boot, J2EE, Hibernate/JPA, REST APIs</li>
+            <li class="flex gap-2"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-[hsl(var(--ring))]"></span> PostgreSQL, MongoDB, Redis, ElasticSearch</li>
+            <li class="flex gap-2"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-[hsl(var(--accent))]"></span> Docker, Kubernetes, Jenkins, Linux</li>
+            <li class="flex gap-2"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-[hsl(var(--primary))]"></span> Observability: ELK, Grafana, Prometheus, Zabbix</li>
+          </ul>
+
+          <div class="mt-5 grid gap-3">
+            <a class="btn btn-ghost w-full" href="#projects">Explore my work</a>
+            <a class="btn btn-primary w-full" href="#contact">Let’s talk</a>
+          </div>
+
+          <div class="mt-5 rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--muted)/.18)] p-4">
+            <div class="text-xs font-semibold text-[hsl(var(--muted-foreground))]">Now</div>
+            <div class="mt-1 text-sm">
+              Working on banking & enterprise integrations and sharpening modern UI skills (Tailwind + component systems).
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="section-head">
+          <h2 class="section-title">About</h2>
+          <p class="section-sub">
+            Innovative Java Developer focused on clean architecture, performance, and reliable production delivery.
+          </p>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-3">
+          <article class="card p-5 reveal">
+            <h3 class="card-title">What I do</h3>
+            <p class="card-sub">
+              I build enterprise backend services and microservices, design REST APIs for internal systems and third‑party banking integrations, and ship production-ready deployments.
+            </p>
+          </article>
+
+          <article class="card p-5 reveal">
+            <h3 class="card-title">How I work</h3>
+            <p class="card-sub">
+              I prioritize security and observability: authentication/authorization, proactive monitoring, clear logs/metrics, and continuous performance improvements.
+            </p>
+          </article>
+
+          <article class="card p-5 reveal">
+            <h3 class="card-title">Focus areas</h3>
+            <p class="card-sub">
+              Spring Boot microservices, Hibernate/JPA optimization, PostgreSQL performance, Keycloak security, and DevOps workflows with Docker/Kubernetes.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section section-alt">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="section-head">
+          <h2 class="section-title">Skills</h2>
+          <p class="section-sub">A practical stack across backend, DevOps, monitoring, databases, and frontend.</p>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-3">
+          <div class="card p-5 reveal">
+            <div class="flex items-center justify-between">
+              <h3 class="card-title">Backend</h3>
+              <span class="badge">Core</span>
+            </div>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="pill">Java</span><span class="pill">Spring Boot</span><span class="pill">J2EE</span>
+              <span class="pill">Hibernate/JPA</span><span class="pill">REST APIs</span><span class="pill">Apache Camel</span>
+              <span class="pill">Redis</span><span class="pill">ElasticSearch</span>
+            </div>
+          </div>
+
+          <div class="card p-5 reveal">
+            <div class="flex items-center justify-between">
+              <h3 class="card-title">DevOps</h3>
+              <span class="badge">Delivery</span>
+            </div>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="pill">Docker</span><span class="pill">Kubernetes</span><span class="pill">Jenkins</span>
+              <span class="pill">Git</span><span class="pill">Linux</span><span class="pill">AWS (Basics)</span>
+            </div>
+          </div>
+
+          <div class="card p-5 reveal">
+            <div class="flex items-center justify-between">
+              <h3 class="card-title">Data & Observability</h3>
+              <span class="badge">Scale</span>
+            </div>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="pill">PostgreSQL</span><span class="pill">MongoDB</span><span class="pill">MySQL</span><span class="pill">MS SQL</span>
+              <span class="pill">ELK</span><span class="pill">Grafana</span><span class="pill">Prometheus</span><span class="pill">Zabbix</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 card p-5 reveal">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="card-title">Frontend (supporting)</h3>
+            <span class="badge">UI</span>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="pill">React</span><span class="pill">Angular</span><span class="pill">TypeScript</span><span class="pill">JavaScript</span>
+            <span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">Bootstrap</span><span class="pill">Tailwind</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="section-head">
+          <h2 class="section-title">Experience</h2>
+          <p class="section-sub">Roles and impact from recent years.</p>
+        </div>
+
+        <div class="grid gap-4">
+          <article class="card p-6 reveal">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="inline-flex items-center gap-2">
+                <span class="badge">Mar 2022 — Present</span>
+                <span class="text-sm text-[hsl(var(--muted-foreground))]">Atlas Computer Technologies</span>
+              </div>
+              <span class="pill">Java Developer</span>
+            </div>
+            <ul class="mt-4 list-disc space-y-2 pl-5 text-[hsl(var(--muted-foreground))]">
+              <li>Developed backend services and microservices using Java + Spring Boot.</li>
+              <li>Designed REST APIs for internal systems and third‑party banking integrations.</li>
+              <li>Optimized data access using Hibernate/JPA and managed PostgreSQL performance.</li>
+              <li>Implemented secure authentication using Keycloak and Spring Security.</li>
+              <li>Containerized services with Docker and deployed to Kubernetes.</li>
+            </ul>
+          </article>
+
+          <article class="card p-6 reveal">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="inline-flex items-center gap-2">
+                <span class="badge">Mar 2022 — Mar 2023</span>
+                <span class="text-sm text-[hsl(var(--muted-foreground))]">Atlas Computer Technologies</span>
+              </div>
+              <span class="pill">DevOps Engineer</span>
+            </div>
+            <ul class="mt-4 list-disc space-y-2 pl-5 text-[hsl(var(--muted-foreground))]">
+              <li>Maintained Linux servers for high availability in banking environments.</li>
+              <li>Configured monitoring and logging using Zabbix, Grafana, and ELK Stack.</li>
+              <li>Applied network security rules with firewalls/iptables/pfSense.</li>
+            </ul>
+          </article>
+
+          <article class="card p-6 reveal">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="inline-flex items-center gap-2">
+                <span class="badge">Mar 2021 — Mar 2022</span>
+                <span class="text-sm text-[hsl(var(--muted-foreground))]">MMCY Tech</span>
+              </div>
+              <span class="pill">SDR</span>
+            </div>
+            <ul class="mt-4 list-disc space-y-2 pl-5 text-[hsl(var(--muted-foreground))]">
+              <li>Built client relationships and reported weekly results.</li>
+              <li>Suggested appropriate products and services based on customer needs.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section section-alt">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="section-head">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-sub">
+            Selected work + latest repositories from GitHub (auto-loaded).
+          </p>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-3">
+          <article class="card p-5 reveal">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="card-title">Wegagen Bank USSD</h3>
+              <span class="badge">Banking</span>
+            </div>
+            <p class="card-sub mt-2">Enables customers to perform financial transactions via mobile without internet access.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="pill">Java</span><span class="pill">Spring Boot</span><span class="pill">REST</span>
+            </div>
+          </article>
+
+          <article class="card p-5 reveal">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="card-title">Wegagen Bank E‑Banking</h3>
+              <span class="badge">Mobile</span>
+            </div>
+            <p class="card-sub mt-2">Account management, deposits, transfers, and bill payment features.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="pill">APIs</span><span class="pill">Security</span><span class="pill">PostgreSQL</span>
+            </div>
+          </article>
+
+          <article class="card p-5 reveal">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="card-title">Hijra Bank E‑Banking</h3>
+              <span class="badge">Payments</span>
+            </div>
+            <p class="card-sub mt-2">Recurring payments, rewards, and notifications support.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="pill">Microservices</span><span class="pill">Docker</span><span class="pill">K8s</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-6 card p-6 reveal">
+          <div class="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h3 class="text-lg font-bold tracking-tight">Latest from GitHub</h3>
+              <p class="mt-1 text-sm text-[hsl(var(--muted-foreground))]">
+                Public repositories pulled from <a class="underline underline-offset-4" href="https://github.com/TselotBeyene" target="_blank" rel="noreferrer">github.com/TselotBeyene</a>.
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button id="refreshRepos" class="btn btn-ghost" type="button">Refresh</button>
+              <a class="btn btn-primary" href="https://github.com/TselotBeyene" target="_blank" rel="noreferrer">View profile</a>
+            </div>
+          </div>
+
+          <div id="githubStatus" class="mt-4 text-sm text-[hsl(var(--muted-foreground))]" role="status" aria-live="polite">
+            Loading repositories…
+          </div>
+
+          <div id="repoGrid" class="mt-4 grid gap-4 md:grid-cols-3" aria-label="GitHub repositories"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="section-head">
+          <h2 class="section-title">Education & Trainings</h2>
+          <p class="section-sub">Academic background and certifications.</p>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-3">
+          <article class="card p-5 reveal">
+            <h3 class="card-title">BSc in Computer Science</h3>
+            <p class="card-sub mt-1">University of Gondar</p>
+          </article>
+          <article class="card p-5 reveal">
+            <h3 class="card-title">AWS for Beginners</h3>
+            <p class="card-sub mt-1">Great Learning Academy</p>
+          </article>
+          <article class="card p-5 reveal">
+            <h3 class="card-title">CCNA Routing & Switching</h3>
+            <p class="card-sub mt-1">Addis Ababa Institute of Technology</p>
+          </article>
+          <article class="card p-5 reveal">
+            <h3 class="card-title">ALX AICE</h3>
+            <p class="card-sub mt-1">AI Career Essentials</p>
+          </article>
+          <article class="card p-5 reveal">
+            <h3 class="card-title">UX Design</h3>
+            <p class="card-sub mt-1">Google Career Certificates</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-alt">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="section-head">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-sub">Want to collaborate or hire me? Send a message.</p>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="card p-6 reveal">
+            <h3 class="text-lg font-bold tracking-tight">Reach me</h3>
+            <div class="mt-4 space-y-2 text-sm text-[hsl(var(--muted-foreground))]">
+              <div class="flex items-center justify-between gap-3">
+                <span>Email</span>
+                <a class="underline underline-offset-4" href="mailto:tselotbeyene70@gmail.com">tselotbeyene70@gmail.com</a>
+              </div>
+              <div class="flex items-center justify-between gap-3">
+                <span>Phone</span>
+                <a class="underline underline-offset-4" href="tel:+251936679199">+251 936 679 199</a>
+              </div>
+              <div class="flex items-center justify-between gap-3">
+                <span>LinkedIn</span>
+                <a class="underline underline-offset-4" href="https://www.linkedin.com/in/tselot-beyene" target="_blank" rel="noreferrer">/in/tselot-beyene</a>
+              </div>
+              <div class="flex items-center justify-between gap-3">
+                <span>GitHub</span>
+                <a class="underline underline-offset-4" href="https://github.com/TselotBeyene" target="_blank" rel="noreferrer">@TselotBeyene</a>
+              </div>
+            </div>
+
+            <div class="mt-5 rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--muted)/.18)] p-4">
+              <div class="text-xs font-semibold text-[hsl(var(--muted-foreground))]">Tip</div>
+              <div class="mt-1 text-sm">
+                Want a custom domain? Deploy this to GitHub Pages or Vercel, then connect your domain (e.g., <span class="font-mono">tselot.dev</span>).
+              </div>
+            </div>
+          </div>
+
+          <form class="card p-6 reveal" id="contactForm">
+            <h3 class="text-lg font-bold tracking-tight">Send a message</h3>
+
+            <div class="mt-4 grid gap-3">
+              <label class="grid gap-1 text-sm text-[hsl(var(--muted-foreground))]">
+                Name
+                <input class="input" name="name" type="text" placeholder="Your name" required />
+              </label>
+
+              <label class="grid gap-1 text-sm text-[hsl(var(--muted-foreground))]">
+                Email
+                <input class="input" name="email" type="email" placeholder="you@example.com" required />
+              </label>
+
+              <label class="grid gap-1 text-sm text-[hsl(var(--muted-foreground))]">
+                Message
+                <textarea class="input" name="message" rows="5" placeholder="Tell me about your project…" required></textarea>
+              </label>
+
+              <button class="btn btn-primary" type="submit">Open in email client</button>
+              <p class="text-xs text-[hsl(var(--muted-foreground))]">
+                No backend needed—this opens your email app with a pre-filled message.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-[hsl(var(--border))]">
+      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-6 text-sm text-[hsl(var(--muted-foreground))]">
+        <div>© <span id="year"></span> Tselot Beyene. Built with Tailwind + shadcn-style tokens.</div>
+        <div class="flex items-center gap-3">
+          <a class="underline underline-offset-4" href="https://github.com/TselotBeyene" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="underline underline-offset-4" href="https://www.linkedin.com/in/tselot-beyene" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Command palette-style floating quick actions -->
+  <button id="toTop" class="fixed bottom-5 right-5 hidden rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card)/.85)] px-4 py-3 text-sm font-semibold shadow-lg backdrop-blur hover:bg-[hsl(var(--card))]">
+    ↑ Top
+  </button>
+
+  <script src="./script.js"></script>
+</body>
+</html>

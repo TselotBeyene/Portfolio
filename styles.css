@@ -1,0 +1,244 @@
+/* shadcn-inspired CSS variables + small component helpers
+   Works great with Tailwind arbitrary values: bg-[hsl(var(--background))], etc.
+*/
+
+:root{
+  --background: 224 55% 6%;
+  --foreground: 210 40% 98%;
+
+  --card: 224 50% 8%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 224 50% 8%;
+  --popover-foreground: 210 40% 98%;
+
+  --muted: 223 36% 16%;
+  --muted-foreground: 215 20% 70%;
+
+  --border: 216 34% 17%;
+  --input: 216 34% 17%;
+
+  --primary: 140 100% 28%;
+  --primary-foreground: 225 40% 98%;
+
+  --secondary: 223 26% 14%;
+  --secondary-foreground: 210 40% 98%;
+
+  --accent: 270 90% 68%;
+  --accent-foreground: 210 40% 98%;
+
+  --ring: 140 100% 28%;
+
+  --radius: 1rem;
+}
+
+html[data-theme="light"]{
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 45%;
+
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+
+  --primary: 140 100% 28%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+
+  --accent: 270 90% 55%;
+  --accent-foreground: 210 40% 98%;
+
+  --ring: 140 100% 28%;
+}
+
+.noise{
+  position:absolute;
+  inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='130'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='130' height='130' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  pointer-events:none;
+}
+
+.navlink{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.45rem .7rem;
+  border-radius: 999px;
+  font-size: .9rem;
+  color: hsl(var(--muted-foreground));
+  border: 1px solid transparent;
+  transition: background .2s ease, border-color .2s ease, color .2s ease, transform .08s ease;
+}
+.navlink:hover{
+  background: hsl(var(--muted) / .45);
+  border-color: hsl(var(--border));
+  color: hsl(var(--foreground));
+  text-decoration:none;
+  transform: translateY(-1px);
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  border-radius: calc(var(--radius) - .25rem);
+  padding:.65rem .9rem;
+  font-weight: 700;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card) / .35);
+  color: hsl(var(--foreground));
+  box-shadow: 0 10px 30px rgba(0,0,0,.22);
+  transition: transform .08s ease, background .2s ease, border-color .2s ease;
+}
+.btn:hover{ transform: translateY(-1px); background: hsl(var(--card) / .55); }
+.btn:active{ transform: translateY(0); }
+
+.btn-primary{
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary)));
+  border-color: hsl(var(--primary) / .35);
+  color: hsl(var(--primary-foreground));
+}
+.btn-primary:hover{ background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary))); }
+
+.btn-ghost{
+  background: hsl(var(--muted) / .35);
+}
+
+.card{
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+  background: linear-gradient(180deg, hsl(var(--card) / .70), hsl(var(--card) / .35));
+  box-shadow: 0 14px 40px rgba(0,0,0,.32);
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  border-radius: 999px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--muted) / .30);
+  padding: .22rem .55rem;
+  font-size: .78rem;
+  font-weight: 700;
+  color: hsl(var(--muted-foreground));
+}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  border-radius: 999px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--muted) / .28);
+  padding: .25rem .6rem;
+  font-size: .8rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.chip{
+  display:inline-flex;
+  align-items:center;
+  border-radius: 999px;
+  padding: .38rem .65rem;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card) / .35);
+  transition: transform .08s ease, background .2s ease;
+}
+.chip:hover{ text-decoration:none; transform: translateY(-1px); background: hsl(var(--card) / .6); }
+
+.section{ padding: 4.25rem 0; }
+.section-alt{
+  border-top: 1px solid hsl(var(--border));
+  border-bottom: 1px solid hsl(var(--border));
+  background: hsl(var(--muted) / .18);
+}
+
+.section-head{
+  display:flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.section-title{
+  font-size: 1.9rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.section-sub{
+  max-width: 70ch;
+  color: hsl(var(--muted-foreground));
+}
+
+.card-title{
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+.card-sub{
+  color: hsl(var(--muted-foreground));
+  line-height: 1.65;
+}
+
+.input{
+  width: 100%;
+  border-radius: calc(var(--radius) - .25rem);
+  border: 1px solid hsl(var(--input));
+  background: hsl(var(--background) / .45);
+  padding: .7rem .8rem;
+  outline: none;
+  color: hsl(var(--foreground));
+}
+html[data-theme="light"] .input{
+  background: hsl(var(--background));
+}
+.input:focus{
+  box-shadow: 0 0 0 4px hsl(var(--ring) / .20);
+  border-color: hsl(var(--ring) / .55);
+}
+
+.stat{
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card) / .35);
+  padding: .9rem 1rem;
+}
+.stat-k{ font-size: .75rem; color: hsl(var(--muted-foreground)); font-weight: 700; }
+.stat-v{ font-size: 1.05rem; font-weight: 900; letter-spacing: -0.01em; margin-top: .1rem; }
+
+/* small dot icon in theme button */
+.i-dot{
+  width: .6rem;
+  height: .6rem;
+  border-radius: 999px;
+  background: hsl(var(--ring));
+  box-shadow: 0 0 0 4px hsl(var(--ring) / .18);
+}
+
+/* reveal animations */
+.reveal{
+  opacity: 0;
+  transform: translateY(14px);
+}
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+/* nice focus */
+:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 4px hsl(var(--ring) / .20);
+  border-radius: .75rem;
+}
